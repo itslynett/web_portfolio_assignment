@@ -1,0 +1,113 @@
+body { 
+  background-color: #f9fdf9;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 2rem;
+  color: #212529;
+  text-align: center;
+}
+
+h2 {
+  font-weight: 600;
+  margin-bottom: 2rem;
+  color: #198754;
+}
+
+/* Grid container for the 2x3 layout (2 rows and 3 columns) */
+.image-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+  gap: 1.5rem;
+  justify-items: center;
+  padding: 2rem 0;
+}
+
+/* Image card styling */
+.image-box {
+  width: 400px;
+  height: 600px;
+  background-color: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.image-box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+.image-box img:hover {
+  transform: scale(1.05);
+}
+
+/* Colored bottom borders for each of the six images */
+.image-box:nth-child(1)::after { background-color: #198754; }
+.image-box:nth-child(2)::after { background-color: #0d6efd; }
+.image-box:nth-child(3)::after { background-color: #dc3545; }
+.image-box:nth-child(4)::after { background-color: #ffc107; }
+.image-box:nth-child(5)::after { background-color: #6610f2; }
+.image-box:nth-child(6)::after { background-color: #20c997; }
+
+.image-box::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 8px;
+  width: 100%;
+  border-radius: 0 0 16px 16px;
+}
+.image-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+  grid-auto-rows: 600px;
+  gap: 2rem;
+  padding: 2rem 0;
+  /* justify-items: center; <-- ❌ Remove this line */
+}
+
+
+/* Footer styling */
+footer {
+  margin-top: 4rem;
+  padding: 2rem 1rem;
+  background-color: #198754;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+
+.footer-logo {
+  height: 40px;
+  margin: 0 0.75rem;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.footer-logo[alt="cicd"] { filter: hue-rotate(180deg); }
+.footer-logo[alt="GitHub"] { filter: brightness(0.5) sepia(0.9) hue-rotate(300deg); }
+.footer-logo[alt="google"] { filter: contrast(1.1) hue-rotate(25deg); }
+.footer-logo[alt="MySQL"] { filter: hue-rotate(45deg) brightness(1.15); }
+.footer-logo[alt="Microsoft"] { filter: hue-rotate(45deg) brightness(1.15); }
+.footer-logo[alt="amazon"] { filter: hue-rotate(100deg) saturate(1.8); }
+
+.footer-logo:hover {
+  transform: scale(1.15) rotate(-3deg);
+}
+
+/* Optional: Remove this section if unused */
+.two-image-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 0;
+}
